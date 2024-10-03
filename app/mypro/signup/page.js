@@ -2,7 +2,7 @@
 import { useState } from "react";
 import classes from "./page.module.css";
 import Link from "next/link";
-export default function signup() {
+export default function Signup() {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [status, setStatus] = useState("");

@@ -1,4 +1,4 @@
-export default function testBox() {
+export default function TestBox() {
   return (
     <div>
       <h1>Login into App</h1>

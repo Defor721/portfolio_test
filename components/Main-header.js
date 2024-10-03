@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import classes from "./main-header.module.css";
+import classes from "./Main-header.module.css";
 import { GoProjectSymlink } from "react-icons/go";
 import { FaBook } from "react-icons/fa";
 export default function Mainheader() {
