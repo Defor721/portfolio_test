@@ -61,7 +61,9 @@ export default function Login() {
           Login
         </button>
         <br />
-        <Link href="/mypro/signup">sign up</Link>
+        <Link href="/mypro/signup" className={classes.signuplink}>
+          sign up
+        </Link>
       </form>
     </div>
   );

@@ -71,7 +71,9 @@ export default function Signup() {
           Create Account
         </button>
       </form>
-      <Link href="/mypro/login">If you have account?</Link>
+      <Link href="/mypro/login" className={classes.loginlink}>
+        If you have account?
+      </Link>
     </div>
   );
 }
