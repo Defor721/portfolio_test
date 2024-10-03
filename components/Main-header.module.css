@@ -18,7 +18,6 @@
   font-size: 5rem;
   animation: animate-to-left 1s ease-out forwards;
   -webkit-animation: animate-to-left 1s ease-out forwards;
-  text-shadow: 0 0 15px rgba(0, 0, 255, 0.3);
 }
 
 .logo:hover {

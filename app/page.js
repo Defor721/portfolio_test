@@ -37,7 +37,7 @@ export default function Home() {
           <p className={classes.desc3}>
             <FaGithub />
             <br />
-            Github
+            https://github.com/Defor721
           </p>
         </div>
       </main>
