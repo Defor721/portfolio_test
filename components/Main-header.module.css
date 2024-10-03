@@ -1,0 +1,85 @@
+.mainHeader {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.logo {
+  background-image: url("../assets/image/istockphoto-1038727610-1024x1024.jpg");
+  background-clip: text;
+  -webkit-background-clip: text;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  gap: 2rem;
+  text-decoration: none;
+  color: transparent;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  font-size: 5rem;
+  animation: animate-to-left 1s ease-out forwards;
+  -webkit-animation: animate-to-left 1s ease-out forwards;
+}
+
+.logo:hover {
+  background: linear-gradient(90deg, #ff8a05, #f9b331);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+.link {
+  text-decoration-line: none;
+  -moz-text-decoration-line: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+
+  color: #04d9ff;
+  animation: animate-to-left 1s ease-out forwards;
+  -webkit-animation: animate-to-left 1s ease-out forwards;
+}
+.icon {
+  color: white;
+}
+
+.link:hover {
+  background: linear-gradient(90deg, #ff8a05, #f9b331);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.active {
+  background: linear-gradient(90deg, #ff8a05, #f9b331);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes animate-to-left {
+  from {
+    opacity: 0;
+    transform: translateX(2rem);
+    -webkit-transform: translateX(2rem);
+    -moz-transform: translateX(2rem);
+    -ms-transform: translateX(2rem);
+    -o-transform: translateX(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+  }
+}
