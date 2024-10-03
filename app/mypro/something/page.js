@@ -1,7 +1,7 @@
 import clientPromise from "@/lib/mongodb";
 import classes from "./page.module.css";
 
-export default async function someThing() {
+export default async function SomeThing() {
   const client = await clientPromise;
   const db = client.db("sample_mflix");
   const data = await db.collection("users").find({}).toArray();
