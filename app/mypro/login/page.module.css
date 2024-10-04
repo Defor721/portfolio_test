@@ -1,5 +1,5 @@
 .login {
-  margin-top: 20px;
+  margin-top: 150px;
   width: 40%;
   align-items: center;
   text-align: center;
@@ -9,6 +9,9 @@
   margin-right: 33%;
   border: 3px solid red;
   border-radius: 8px;
+}
+.logintitle {
+  letter-spacing: 0.3rem;
 }
 .loginName {
   border: 2px solid black;
@@ -34,6 +37,11 @@
   width: 230px;
   height: 30px;
   cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+}
+.loginButton:hover {
+  background-color: red;
 }
 .signuplink {
   font-weight: bold;

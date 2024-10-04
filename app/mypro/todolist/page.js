@@ -7,8 +7,12 @@ import classes from "./page.module.css";
 
 export default function TodoList() {
   useEffect(() => {
-    const getTodos = async () => {};
-    getTodos();
+    async function getTodo() {
+      const response = await fetch("/api/todos");
+      const result = await response.json();
+      console.log(result);
+    }
+    getTodo();
   }, []);
 
   const [modalVisible, setModalVisible] = useState(false);

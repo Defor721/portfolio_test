@@ -1,47 +1,28 @@
-import connectDB from "../../../lib/mongodb";
+import clientPromise from "@/lib/mongodb";
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  const client = await connectDB;
-  const db = client.db("todo");
-  const result = await db.collection("todos").find().toArray();
-  let todos = result.map((a) => {
-    a._id = a._id.toString();
-    return a;
-  });
-  return NextResponse.json(todos);
+  try {
+    const client = await clientPromise;
+    const db = client.db("userdata");
+    const collection = db.collection("todos");
+    const data = await collection.find({}).toArray();
+
+    return NextResponse.json({ message: data }, { status: 200 });
+  } catch (error) {
+    return NextResponse.json({ message: Failed }, { status: 500 });
+  }
 }
 
-export async function POST() {
-  const client = await connectDB;
-  const db = client.db("todo");
-  const result = await db.collection("todos").find().toArray();
-  let todos = result.map((a) => {
-    a._id = a._id.toString();
-    return a;
+export async function POST(request) {
+  const { title, description } = await request.json;
+  const client = await clientPromise;
+  const db = client.db("userdata");
+  const collection = db.collection("todos");
+  const result = await collection.insertOne({
+    title,
+    description,
+    createdAt: new Date(),
   });
-  return NextResponse.json(todos);
+  return NextResponse.json({ message: result }, { status: 200 });
 }
-
-// export default async function handler(req, res) {
-//   if (req.method === "GET") {
-//     const client = await clientPromise;
-//     const db = client.db("todo");
-//     const result = await db.collection("todos").find().toArray();
-//     let todos = result.map((a) => {
-//       a._id = a._id.toString();
-//       return a;
-//     });
-//     res.status(200).json(todos);
-//   } else {
-//     res.status(405);
-//   }
-
-// const db = client.db("todo");
-// let result = await db.collection("todos").find().toArray();
-// let todos = result.map((a) => {
-//   a._id = a._id.toString();
-//   return a;
-// });
-// return todos;
-// }

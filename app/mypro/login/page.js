@@ -28,7 +28,7 @@ export default function Login() {
   return (
     <div className={classes.login}>
       <form onSubmit={handleSubmit}>
-        <h1>Login</h1>
+        <h1 className={classes.logintitle}>Login</h1>
         <div>
           <label for="id">ID</label>
           <br />
