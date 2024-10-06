@@ -23,9 +23,9 @@ export default function ProjectPage() {
           <div className={classes.list}>Login/Logout</div>
         </Link>
         <ul>
-          <li>응애</li>
-          <li>응애</li>
-          <li>응애</li>
+          <li>mongodb를 사용하여 사용자 생성, 검증</li>
+          <li>api route와 NextResponse 사용하여 api 구현</li>
+          <li>상태관리를 통해 form 요소 제어 </li>
         </ul>
       </div>
       <div className={classes.backdiv}>
