@@ -12,17 +12,31 @@ export default function ProjectPage() {
             TodoList
           </div>
         </Link>
-        <div>d</div>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
       </div>
       <div className={classes.backdiv}>
         <Link href="/mypro/login" className={classes.link}>
           <div className={classes.list}>Login/Logout</div>
         </Link>
+        <ul>
+          <li>응애</li>
+          <li>응애</li>
+          <li>응애</li>
+        </ul>
       </div>
       <div className={classes.backdiv}>
         <Link href="/mypro/something" className={classes.link}>
           <div className={classes.list}>something</div>
         </Link>
+        <ul>
+          <li>응애</li>
+          <li>응애</li>
+          <li>응애</li>
+        </ul>
       </div>
     </div>
   );

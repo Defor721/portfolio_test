@@ -21,7 +21,7 @@
 }
 
 .logo:hover {
-  background: linear-gradient(90deg, #ff8a05, #f9b331);
+  background: #f2d675;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -50,14 +50,14 @@
 }
 
 .link:hover {
-  background: linear-gradient(90deg, #ff8a05, #f9b331);
+  background: #f2d675;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .active {
-  background: linear-gradient(90deg, #ff8a05, #f9b331);
+  background: yellow;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
