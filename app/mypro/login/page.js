@@ -30,12 +30,12 @@ export default function Login() {
       <form onSubmit={handleSubmit}>
         <h1 className={classes.logintitle}>Login</h1>
         <div>
-          <label for="id">ID</label>
+          <label for="id">Name</label>
           <br />
           <input
             type="text"
             id="id"
-            placeholder="Email"
+            placeholder="name"
             value={name}
             onChange={(e) => {
               setName(e.target.value);
