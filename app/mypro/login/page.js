@@ -23,6 +23,7 @@ export default function Login() {
     }
     setName("");
     setPassword("");
+    console.log(result);
   }
 
   return (
