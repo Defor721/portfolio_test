@@ -2,10 +2,11 @@
 import { useState } from "react";
 import classes from "./page.module.css";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 export default function Signup() {
+  const router = useRouter();
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
-  const [status, setStatus] = useState("");
   const [isAgree, setIsAgree] = useState(false);
 
   async function handleSubmit(e) {
@@ -26,9 +27,7 @@ export default function Signup() {
     });
     const result = await response.json();
     alert(result.message);
-    setStatus(result.message);
-    setName("");
-    setPassword("");
+    router.push("/mypro/login");
   }
 
   return (
