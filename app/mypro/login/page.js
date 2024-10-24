@@ -2,8 +2,10 @@
 import classes from "./page.module.css";
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
+  const router = useRouter();
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   async function handleSubmit(e) {
