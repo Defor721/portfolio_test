@@ -1,21 +1,15 @@
-/* @font-face {
-  font-family: "MyCustomFont";
-  src: url("/assets/font/changdan.ttf") format("truetype");
-  font-weight: 100;
-  font-style: normal;
-} */
-
 .mainHeader {
   position: sticky;
   top: 0;
   left: 0;
-  right: 0;
+  width: 100%;
+  z-index: 9999;
+  justify-content: flex-start;
 }
 
 .logo {
   display: flex;
   align-items: flex-start;
-  justify-content: flex-start;
   gap: 2rem;
   text-decoration: none;
   color: white;

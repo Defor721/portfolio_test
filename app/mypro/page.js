@@ -1,8 +1,18 @@
+"use client";
+
 import Link from "next/link";
 import classes from "./page.module.css";
 import { FaCalendarCheck } from "react-icons/fa";
-
+import { MdLogin } from "react-icons/md";
+import { FaArrowAltCircleDown } from "react-icons/fa";
+import { useState } from "react";
 export default function ProjectPage() {
+  const [listVisible, setListVisible] = useState(false);
+
+  function listShower() {
+    setListVisible((prev) => !prev);
+  }
+
   return (
     <div className={classes.project}>
       <div className={classes.backdiv}>
@@ -12,31 +22,46 @@ export default function ProjectPage() {
             TodoList
           </div>
         </Link>
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
+        <div className={classes.desc}>
+          <FaArrowAltCircleDown onClick={listShower} />
+          <ul className={listVisible ? classes.unlist : classes.unlistOut}>
+            <li>dmddo</li>
+            <li>dmddo</li>
+            <li>dmddo</li>
+          </ul>
+        </div>
       </div>
       <div className={classes.backdiv}>
         <Link href="/mypro/login" className={classes.link}>
-          <div className={classes.list}>Login/Logout</div>
+          <div className={classes.list}>
+            <MdLogin />
+            Login/Logout
+          </div>
         </Link>
-        <ul>
-          <li>mongodb를 사용하여 사용자 생성, 검증</li>
-          <li>api route와 NextResponse 사용하여 api 구현</li>
-          <li>상태관리를 통해 form 요소 제어 </li>
-        </ul>
+        <div className={classes.desc}>
+          <FaArrowAltCircleDown onClick={listShower} />
+          <ul className={listVisible ? classes.unlist : classes.unlistOut}>
+            <li>dmddo</li>
+            <li>dmddo</li>
+            <li>dmddo</li>
+          </ul>
+        </div>
       </div>
       <div className={classes.backdiv}>
         <Link href="/mypro/something" className={classes.link}>
           <div className={classes.list}>something</div>
         </Link>
-        <ul>
-          <li>응애</li>
-          <li>응애</li>
-          <li>응애</li>
-        </ul>
+        <div className={classes.desc}>
+          <FaArrowAltCircleDown
+            onClick={listShower}
+            className={classes.arrow}
+          />
+          <ul className={listVisible ? classes.unlist : classes.unlistOut}>
+            <li>dmddo</li>
+            <li>dmddo</li>
+            <li>dmddo</li>
+          </ul>
+        </div>
       </div>
     </div>
   );
