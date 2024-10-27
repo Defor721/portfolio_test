@@ -7,7 +7,7 @@ import { MdLogin } from "react-icons/md";
 import { FaArrowAltCircleDown } from "react-icons/fa";
 import { useState } from "react";
 export default function ProjectPage() {
-  const [listVisible, setListVisible] = useState(false);
+  const [listVisible, setListVisible] = useState(true);
 
   function listShower() {
     setListVisible((prev) => !prev);
