@@ -16,10 +16,10 @@ export default function ProjectPage() {
   return (
     <div className={classes.project}>
       <div className={classes.backdiv}>
-        <Link href="/mypro/todolist" className={classes.link}>
+        <Link href="/mypro/login" className={classes.link}>
           <div className={classes.list}>
-            <FaCalendarCheck />
-            TodoList
+            <MdLogin />
+            Login/Logout
           </div>
         </Link>
         <div className={classes.desc}>
@@ -32,10 +32,10 @@ export default function ProjectPage() {
         </div>
       </div>
       <div className={classes.backdiv}>
-        <Link href="/mypro/login" className={classes.link}>
+        <Link href="/mypro/todolist" className={classes.link}>
           <div className={classes.list}>
-            <MdLogin />
-            Login/Logout
+            <FaCalendarCheck />
+            TodoList
           </div>
         </Link>
         <div className={classes.desc}>
