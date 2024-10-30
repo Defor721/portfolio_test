@@ -17,15 +17,16 @@ export default function Login() {
       },
       body: JSON.stringify({ name, password }),
     });
-    const result = await response.json();
-    if (result.status == 200) {
-      alert("login");
-    } else {
+    if (response.ok) {
+      const result = await response.json();
+      const token = result.token;
+      sessionStorage.setItem("Token", token);
+      console.log("Token Saved");
       alert(result.message);
+      router.push("/mypro");
+    } else {
+      alert(error);
     }
-    setName("");
-    setPassword("");
-    console.log(result);
   }
 
   return (

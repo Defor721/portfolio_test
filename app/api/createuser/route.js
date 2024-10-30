@@ -15,7 +15,6 @@ export async function POST(request) {
         password,
         createdAt: new Date(),
       });
-      // 성공 응답 반환
       return NextResponse.json(
         { message: "Data created successfully", result },
         { status: 201 }
@@ -27,7 +26,6 @@ export async function POST(request) {
       );
     }
   } catch (error) {
-    // 에러 응답 반환
     return NextResponse.json(
       { message: "Failed to create data", error: error.message },
       { status: 500 }
