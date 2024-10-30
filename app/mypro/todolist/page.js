@@ -4,9 +4,16 @@ import NewTodo from "@/components/NewTodo";
 import Todo from "@/components/Todo";
 import { useState, useEffect } from "react";
 import classes from "./page.module.css";
+import { useRouter } from "next/navigation";
 
 export default function TodoList() {
+  const router = useRouter();
   useEffect(() => {
+    const token = sessionStorage.getItem("token");
+    if (!token) {
+      alert("로그인을 수행해주세요");
+      router.push("/mypro/login");
+    }
     async function getTodo() {
       const response = await fetch("/api/todos");
       const result = await response.json();
