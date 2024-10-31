@@ -11,7 +11,7 @@ export default function TodoList() {
   useEffect(() => {
     const token = sessionStorage.getItem("token");
     if (!token) {
-      alert("로그인을 수행해주세요");
+      alert("Please log in");
       router.push("/mypro/login");
     }
     async function getTodo() {
