@@ -19,13 +19,13 @@ export default function Login() {
     });
     if (response.ok) {
       const result = await response.json();
-      const token = result.token;
-      sessionStorage.setItem("token", token);
-      console.log("token Saved");
       alert(result.message);
       router.push("/mypro");
     } else {
-      alert(error);
+      const result = await response.json();
+      alert(result.message);
+      setName("");
+      setPassword("");
     }
   }
 

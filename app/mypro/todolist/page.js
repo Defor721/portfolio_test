@@ -8,19 +8,6 @@ import { useRouter } from "next/navigation";
 
 export default function TodoList() {
   const router = useRouter();
-  useEffect(() => {
-    const token = sessionStorage.getItem("token");
-    if (!token) {
-      alert("Please log in");
-      router.push("/mypro/login");
-    }
-    async function getTodo() {
-      const response = await fetch("/api/todos");
-      const result = await response.json();
-      console.log(result);
-    }
-    getTodo();
-  }, []);
 
   const [modalVisible, setModalVisible] = useState(false);
   const [todos, setTodo] = useState([]);
