@@ -1,3 +1,9 @@
-export default function loading() {
-  return <h1>Now Loading...</h1>;
+import classes from "./loading.module.css";
+
+export default function Loading() {
+  return (
+    <div className={classes.loadingContainer}>
+      <div className={classes.spinner}></div>
+    </div>
+  );
 }
