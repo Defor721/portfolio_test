@@ -24,9 +24,9 @@ export async function POST(request) {
       );
       response.cookies.set("token", token, {
         httpOnly: true,
-        secure: process.env.NODE_ENV === "production", // 프로덕션 환경에서만 HTTPS를 통해 쿠키를 전송
-        maxAge: 60 * 60, // 1시간 (초 단위)
-        path: "/", // 사이트 전역에서 쿠키 접근 가능
+        secure: process.env.NODE_ENV === "production",
+        maxAge: 60 * 60,
+        path: "/",
       });
 
       return response;
