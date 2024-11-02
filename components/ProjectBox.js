@@ -17,7 +17,10 @@ export default function ProjectBox({ title }) {
         </div>
       </Link>
       <div className={classes.desc}>
-        <FaArrowAltCircleDown onClick={listShower} />
+        <FaArrowAltCircleDown
+          onClick={listShower}
+          className={classes.arrowDown}
+        />
         <ul className={listVisible ? classes.unlist : classes.unlistOut}></ul>
       </div>
     </div>

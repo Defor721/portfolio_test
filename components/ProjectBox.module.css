@@ -91,7 +91,11 @@
 }
 
 .loginList:hover {
-  background-color: #5a5a5a;
+  background-color: #db4455;
   box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.2);
   transform: scale(1.03);
+}
+
+.arrowDown {
+  cursor: pointer;
 }
