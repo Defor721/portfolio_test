@@ -8,6 +8,35 @@ import { useRouter } from "next/navigation";
 
 export default function TodoList() {
   const router = useRouter();
+  useEffect(() => {
+    checkCookies();
+  }, []);
+
+  async function checkCookies() {
+    try {
+      const response = await fetch("/api/protected", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+      });
+
+      if (!response.ok) {
+        console.error("Error:", response.status, await response.text());
+        if (response.status === 401) {
+          alert("Please log in");
+          router.push("/mypro/login");
+        }
+        return;
+      }
+
+      const result = await response.json();
+      alert(result.message);
+    } catch (error) {
+      console.error("Fetch error:", error);
+    }
+  }
 
   const [modalVisible, setModalVisible] = useState(false);
   const [todos, setTodo] = useState([]);
