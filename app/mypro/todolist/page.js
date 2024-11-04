@@ -8,10 +8,13 @@ import { useRouter } from "next/navigation";
 
 export default function TodoList() {
   const router = useRouter();
+  const [checked, setChecked] = useState(false);
   useEffect(() => {
-    checkCookies();
-  }, []);
-
+    if (!checked) {
+      checkCookies();
+      setChecked(true);
+    }
+  }, [checked]);
   async function checkCookies() {
     try {
       const response = await fetch("/api/protected", {

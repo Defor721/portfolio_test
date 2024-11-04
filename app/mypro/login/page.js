@@ -8,8 +8,10 @@ export default function Login() {
   const router = useRouter();
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
   async function handleSubmit(e) {
     e.preventDefault();
+    setLoading(true);
     const response = await fetch("/api/checkuser", {
       method: "POST",
       headers: {
@@ -18,10 +20,12 @@ export default function Login() {
       body: JSON.stringify({ name, password }),
     });
     if (response.ok) {
+      setLoading(false);
       const result = await response.json();
       alert(result.message);
       router.push("/mypro");
     } else {
+      setLoading(false);
       const result = await response.json();
       alert(result.message);
       setName("");
