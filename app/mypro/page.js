@@ -18,7 +18,7 @@ export default function ProjectPage() {
         title={"todolist"}
         desc1="기본적인 CRUD 작업이 가능한 TodoList"
         desc2="인증 정보에 따라 list 렌더링"
-        desc3=""
+        desc3="middleware 작동 안될시 새로고침..."
       />
       <FaArrowRight className={classes.rightArrow} />
       <ProjectBox title={"something"} desc1="더미" desc2="dd" desc3="" />

@@ -9,12 +9,37 @@ import { useRouter } from "next/navigation";
 export default function TodoList() {
   const router = useRouter();
   const [checked, setChecked] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [todos, setTodo] = useState([]);
   useEffect(() => {
     if (!checked) {
       checkCookies();
-      setChecked(true);
+      setChecked((prev) => !prev);
     }
   }, [checked]);
+  useEffect(() => {
+    getTodos();
+  }, [todos]);
+  async function getTodos() {
+    try {
+      const response = await fetch("/api/getlist", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+      });
+      if (!response.ok) {
+        console.error("Error:", response.status, await response.text());
+      } else {
+        const result = await response.json();
+        setTodo(result.list);
+      }
+    } catch (error) {
+      console.error("Fetch error:", error);
+    }
+  }
+
   async function checkCookies() {
     try {
       const response = await fetch("/api/protected", {
@@ -33,30 +58,16 @@ export default function TodoList() {
         }
         return;
       }
-
-      const result = await response.json();
-      alert(result.message);
     } catch (error) {
       console.error("Fetch error:", error);
     }
   }
-
-  const [modalVisible, setModalVisible] = useState(false);
-  const [todos, setTodo] = useState([]);
 
   function modalHandler() {
     setModalVisible((prev) => !prev);
   }
   function addTodoHandler(todos) {
     setTodo((prev) => [todos, ...prev]);
-  }
-
-  function deleteHandler(key) {
-    setTodo((prev) => {
-      prev = prev.filter((el) => {
-        el.key != key;
-      });
-    });
   }
 
   return (
@@ -76,8 +87,8 @@ export default function TodoList() {
           <Todo
             title={todo.title}
             description={todo.description}
-            key={todo.key}
-            deleteHandler={deleteHandler}
+            key={todo.createAt}
+            createAt={todo.createAt}
           />
         ))}
       </div>
