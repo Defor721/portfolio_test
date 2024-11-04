@@ -54,11 +54,8 @@ export default function TodoList() {
 
       if (!response.ok) {
         console.error("Error:", response.status, await response.text());
-        if (response.status === 401) {
-          alert("Please log in");
-          router.push("/mypro/login");
-        }
-        return;
+        alert("Please log in");
+        router.push("/mypro/login");
       }
     } catch (error) {
       console.error("Fetch error:", error);
