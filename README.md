@@ -12,7 +12,7 @@ Live Demo: https://portfolio-test-6zwo7mbos-defors-projects.vercel.app/
 
 프로젝트 목록: 개발한 프로젝트에 대한 설명과 이미지 제공
 
-기술 스택: 사용한 기술과 숙련도 표시
+기술 스택: 사용할 수 있는 기술 스택 제공
 
 연락처: 이메일 및 소셜 미디어 링크 제공
 
@@ -28,8 +28,6 @@ Live Demo: https://portfolio-test-6zwo7mbos-defors-projects.vercel.app/
 
 📫 Contact
 
-Email: your-email@example.com
+Email: 721snglwhs@gmail.com
 
-LinkedIn: Your LinkedIn
-
-GitHub: Your GitHub
+GitHub: https://github.com/Defor721
