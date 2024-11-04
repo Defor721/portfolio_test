@@ -24,9 +24,12 @@ export default function ProjectPage() {
 
       if (response.ok) {
         setIsLogin(false);
+      } else {
+        setIsLogin(true);
       }
     } catch (error) {
       console.error("Fetch error:", error);
+      setIsLogin(true);
     }
   }
   return (
