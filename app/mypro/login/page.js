@@ -3,7 +3,7 @@ import classes from "./page.module.css";
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-
+import Loading from "@/app/loading";
 export default function Login() {
   const router = useRouter();
   const [name, setName] = useState("");
@@ -20,10 +20,9 @@ export default function Login() {
       body: JSON.stringify({ name, password }),
     });
     if (response.ok) {
-      setLoading(false);
+      router.push("/mypro");
       const result = await response.json();
       alert(result.message);
-      router.push("/mypro");
     } else {
       setLoading(false);
       const result = await response.json();
@@ -34,45 +33,51 @@ export default function Login() {
   }
 
   return (
-    <div className={classes.login}>
-      <form onSubmit={handleSubmit}>
-        <h1 className={classes.logintitle}>Login</h1>
-        <div>
-          <label for="id">Name</label>
-          <br />
-          <input
-            type="text"
-            id="id"
-            placeholder="name"
-            value={name}
-            onChange={(e) => {
-              setName(e.target.value);
-            }}
-            className={classes.loginName}
-          />
+    <>
+      {loading ? (
+        <Loading />
+      ) : (
+        <div className={classes.login}>
+          <form onSubmit={handleSubmit}>
+            <h1 className={classes.logintitle}>Login</h1>
+            <div>
+              <label for="id">Name</label>
+              <br />
+              <input
+                type="text"
+                id="id"
+                placeholder="name"
+                value={name}
+                onChange={(e) => {
+                  setName(e.target.value);
+                }}
+                className={classes.loginName}
+              />
+            </div>
+            <div>
+              <label for="pw">Password</label>
+              <br />
+              <input
+                type="password"
+                id="pw"
+                placeholder="password"
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+                className={classes.loginPassword}
+              />
+            </div>
+            <button type="submit" className={classes.loginButton}>
+              Login
+            </button>
+            <br />
+            <Link href="/mypro/signup" className={classes.signuplink}>
+              sign up
+            </Link>
+          </form>
         </div>
-        <div>
-          <label for="pw">Password</label>
-          <br />
-          <input
-            type="password"
-            id="pw"
-            placeholder="password"
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-            className={classes.loginPassword}
-          />
-        </div>
-        <button type="submit" className={classes.loginButton}>
-          Login
-        </button>
-        <br />
-        <Link href="/mypro/signup" className={classes.signuplink}>
-          sign up
-        </Link>
-      </form>
-    </div>
+      )}
+    </>
   );
 }
