@@ -10,7 +10,7 @@ export default function ProjectPage() {
       <ProjectBox
         title={"login"}
         desc1="NextJS Api Route와 MongoDB를 이용해서 구현한 로그인/회원가입 기능"
-        desc2="JWT TOKEN을 이용하여 인증관리"
+        desc2="JWT와 Cookie를 이용하여 인증관리"
         desc3="NextJS middleware 기능 이용하여 인증 상태에 따른 경로 제한"
       />
       <FaArrowRight className={classes.rightArrow} />
