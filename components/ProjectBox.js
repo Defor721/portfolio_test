@@ -4,7 +4,7 @@ import { FaArrowAltCircleDown } from "react-icons/fa";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-export default function ProjectBox({ title }) {
+export default function ProjectBox({ title, desc1, desc2, desc3 }) {
   useEffect(() => {}, []);
 
   const [listVisible, setListVisible] = useState(true);
@@ -24,7 +24,11 @@ export default function ProjectBox({ title }) {
           onClick={listShower}
           className={classes.arrowDown}
         />
-        <ul className={listVisible ? classes.unlist : classes.unlistOut}></ul>
+        <ul className={listVisible ? classes.unlist : classes.unlistOut}>
+          <li>{desc1}</li>
+          <li>{desc2}</li>
+          <li>{desc3}</li>
+        </ul>
       </div>
     </div>
   );

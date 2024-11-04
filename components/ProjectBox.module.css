@@ -64,7 +64,14 @@
 }
 
 .unlistOut {
-  list-style-type: none;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  list-style: none;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .rightArrow {
@@ -98,4 +105,14 @@
 
 .arrowDown {
   cursor: pointer;
+}
+.unlistOut li {
+  margin: 8px 0;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #333;
+  background-color: #fff;
+  border-radius: 4px;
+  transition: background-color 0.2s;
 }
