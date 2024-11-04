@@ -4,7 +4,7 @@ Author: Defor
 Live Demo: https://portfolio-test-6zwo7mbos-defors-projects.vercel.app/
 
 🔍 About
-이 포트폴리오는 프론트엔드 및 백엔드 개발자로서의 저의 능력을 보여주기 위한 프로젝트입니다. 
+프론트엔드 및 백엔드 기술을 활용한 포트폴리오용 페이지  
 
 ✨ Features
 
