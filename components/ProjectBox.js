@@ -2,6 +2,8 @@ import classes from "./ProjectBox.module.css";
 import { useEffect, useState } from "react";
 import { FaArrowAltCircleDown } from "react-icons/fa";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+
 export default function ProjectBox({ title }) {
   useEffect(() => {}, []);
 
@@ -9,6 +11,7 @@ export default function ProjectBox({ title }) {
   function listShower() {
     setListVisible((prev) => !prev);
   }
+
   return (
     <div className={classes.backdiv}>
       <Link href={`/mypro/${title}`} className={classes.link}>
