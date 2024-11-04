@@ -21,7 +21,8 @@
     "path-to-regexp": "^6.2.2",
     "react": "^18",
     "react-dom": "^18",
-    "react-icons": "^5.2.0"
+    "react-icons": "^5.2.0",
+    "swr": "^2.2.5"
   },
   "devDependencies": {
     "eslint": "^8",

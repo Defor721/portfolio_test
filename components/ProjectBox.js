@@ -3,6 +3,10 @@ import { useEffect, useState } from "react";
 import { FaArrowAltCircleDown } from "react-icons/fa";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import useSWR from "swr";
+
+const fetcher = (url) =>
+  fetch(url, { cache: "no-store" }).then((res) => res.json());
 
 export default function ProjectBox({ title, desc1, desc2, desc3 }) {
   const router = useRouter();
@@ -10,26 +14,24 @@ export default function ProjectBox({ title, desc1, desc2, desc3 }) {
   function listShower() {
     setListVisible((prev) => !prev);
   }
-  async function logoutHandler() {
+  const { data, error, mutate } = useSWR("/api/logout", fetcher, {
+    dedupingInterval: 0,
+    revalidateOnFocus: false,
+  });
+
+  const logoutHandler = async () => {
     try {
-      const response = await fetch("/api/logout", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-      });
-      const result = await response.json();
-      if (response.ok) {
+      const result = await mutate();
+      if (!error) {
         router.push("/");
         alert(result.message);
       } else {
-        alert(result.message);
+        alert("Logout failed");
       }
     } catch (error) {
       console.error("Fetch error:", error);
     }
-  }
+  };
 
   return (
     <>
