@@ -3,12 +3,36 @@
 import classes from "./page.module.css";
 import { FaArrowRight } from "react-icons/fa";
 import ProjectBox from "@/components/ProjectBox";
+import { useEffect, useState } from "react";
 
 export default function ProjectPage() {
+  const [isLogin, setIsLogin] = useState(true);
+
+  useEffect(() => {
+    checkCookies();
+  }, []);
+
+  async function checkCookies() {
+    try {
+      const response = await fetch("/api/protected", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+      });
+
+      if (response.ok) {
+        setIsLogin(false);
+      }
+    } catch (error) {
+      console.error("Fetch error:", error);
+    }
+  }
   return (
     <div className={classes.project}>
       <ProjectBox
-        title={"login"}
+        title={isLogin ? "login" : "logout"}
         desc1="NextJS Api Route와 MongoDB를 이용해서 구현한 로그인/회원가입 기능"
         desc2="JWT와 Cookie를 이용하여 인증관리"
         desc3="NextJS middleware 기능 이용하여 인증 상태에 따른 경로 제한"

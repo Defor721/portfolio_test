@@ -27,7 +27,6 @@ export default function Signup() {
     });
     const result = await response.json();
     alert(result.message);
-    router.push("/mypro/login");
   }
 
   return (
