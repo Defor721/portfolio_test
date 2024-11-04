@@ -5,12 +5,14 @@ import Todo from "@/components/Todo";
 import { useState, useEffect } from "react";
 import classes from "./page.module.css";
 import { useRouter } from "next/navigation";
+import Loading from "@/app/loading";
 
 export default function TodoList() {
   const router = useRouter();
   const [checked, setChecked] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
   const [todos, setTodo] = useState([]);
+
   useEffect(() => {
     if (!checked) {
       checkCookies();
@@ -31,6 +33,8 @@ export default function TodoList() {
       });
       if (!response.ok) {
         console.error("Error:", response.status, await response.text());
+        const result = await response.json();
+        alert(result.message);
       } else {
         const result = await response.json();
         if (result.list != 0) {
@@ -76,6 +80,7 @@ export default function TodoList() {
           Create Todo
         </button>
       </div>
+
       <div>
         {modalVisible && (
           <Modal modalHandler={modalHandler}>

@@ -14,7 +14,10 @@ export async function GET(request) {
         const user = await db.collection("users").findOne({ name: name });
         if (user) {
           const list = user.todos;
-          return NextResponse.json({ message: "success", list });
+          return NextResponse.json(
+            { message: "success", list },
+            { status: 200 }
+          );
         }
 
         return NextResponse.json({ message: "data not found" });
