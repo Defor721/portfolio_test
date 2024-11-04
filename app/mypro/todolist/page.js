@@ -33,7 +33,9 @@ export default function TodoList() {
         console.error("Error:", response.status, await response.text());
       } else {
         const result = await response.json();
-        setTodo(result.list);
+        if (result.list != 0) {
+          setTodo(result.list);
+        }
       }
     } catch (error) {
       console.error("Fetch error:", error);

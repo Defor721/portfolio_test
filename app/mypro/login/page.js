@@ -41,7 +41,7 @@ export default function Login() {
           <form onSubmit={handleSubmit}>
             <h1 className={classes.logintitle}>Login</h1>
             <div>
-              <label for="id">Name</label>
+              <label htmlFor="id">Name</label>
               <br />
               <input
                 type="text"
@@ -55,7 +55,7 @@ export default function Login() {
               />
             </div>
             <div>
-              <label for="pw">Password</label>
+              <label htmlFor="pw">Password</label>
               <br />
               <input
                 type="password"
