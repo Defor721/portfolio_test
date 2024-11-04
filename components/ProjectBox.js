@@ -10,12 +10,34 @@ export default function ProjectBox({ title, desc1, desc2, desc3 }) {
   function listShower() {
     setListVisible((prev) => !prev);
   }
+  async function logoutHandler() {
+    try {
+      const response = await fetch("/api/logout", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+      });
+      const result = await response.json();
+      if (response.ok) {
+        router.push("/");
+        alert(result.message);
+      } else {
+        alert(result.message);
+      }
+    } catch (error) {
+      console.error("Fetch error:", error);
+    }
+  }
 
   return (
     <>
       {title === "logout" ? (
         <div className={classes.backdiv}>
-          <div className={classes.logout}>{title}</div>
+          <div className={classes.logout} onClick={logoutHandler}>
+            {title}
+          </div>
         </div>
       ) : (
         <div className={classes.backdiv}>
