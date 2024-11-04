@@ -3,23 +3,15 @@ Author: Defor
 
 Live Demo: https://portfolio-test-6zwo7mbos-defors-projects.vercel.app/
 
-📑 Table of Contents
-About
-Features
-Technologies
-Project Structure
-Setup
-Usage
-Contact
 🔍 About
-이 포트폴리오는 프론트엔드 및 백엔드 개발자로서의 저의 능력을 보여주기 위한 프로젝트입니다. 최신 기술 스택과 디자인 트렌드를 반영하여 제작하였으며, 다양한 프로젝트와 기술적인 내용을 담고 있습니다.
+이 포트폴리오는 프론트엔드 및 백엔드 개발자로서의 저의 능력을 보여주기 위한 프로젝트입니다. 
 
 ✨ Features
-반응형 디자인: 모든 기기에서 최적화된 UI 제공
+
 프로젝트 목록: 다양한 프로젝트에 대한 설명과 이미지 제공
 기술 스택: 사용한 기술과 숙련도 표시
 연락처: 이메일 및 소셜 미디어 링크 제공
-다크 모드 지원 (선택 사항)
+
 🛠️ Technologies
 이 포트폴리오에서 사용한 주요 기술은 다음과 같습니다:
 
