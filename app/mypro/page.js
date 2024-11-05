@@ -15,7 +15,7 @@ export default function ProjectPage() {
   async function checkCookies() {
     try {
       const response = await fetch("/api/protected", {
-        method: "GET",
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
         },

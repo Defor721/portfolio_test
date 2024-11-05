@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-export async function GET(request) {
+export async function POST(request) {
   try {
     const token = request.cookies.get("token")?.value;
     if (!token) {
