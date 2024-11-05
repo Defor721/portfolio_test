@@ -9,23 +9,20 @@ import Loading from "@/app/loading";
 
 export default function TodoList() {
   const router = useRouter();
-  const [checked, setChecked] = useState(false);
+
   const [modalVisible, setModalVisible] = useState(false);
   const [todos, setTodo] = useState([]);
 
   useEffect(() => {
-    if (!checked) {
-      checkCookies();
-      setChecked((prev) => !prev);
-    }
-  }, [checked]);
+    checkCookies();
+  }, []);
   useEffect(() => {
     getTodos();
   }, [todos]);
   async function getTodos() {
     try {
       const response = await fetch("/api/getlist", {
-        method: "GET",
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
@@ -49,7 +46,7 @@ export default function TodoList() {
   async function checkCookies() {
     try {
       const response = await fetch("/api/protected", {
-        method: "GET",
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
         },

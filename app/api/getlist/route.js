@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import clientPromise from "@/lib/mongodb";
 import jwt from "jsonwebtoken";
 
-export async function GET(request) {
+export async function POST(request) {
   try {
     const token = request.cookies.get("token")?.value;
     const client = await clientPromise;
