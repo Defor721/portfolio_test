@@ -4,15 +4,10 @@ export function middleware(request) {
   const token = request.cookies.get("token")?.value;
 
   if (!token) {
-    const referer = request.headers.get("referer") || "/";
-    const response = NextResponse.redirect(referer);
-    response.headers.set("Cache-Control", "no-store");
-    return response;
+    return NextResponse.redirect(new URL("/", request.url));
   }
 
-  const response = NextResponse.next();
-  response.headers.set("Cache-Control", "no-store");
-  return response;
+  return NextResponse.next();
 }
 
 export const config = {
