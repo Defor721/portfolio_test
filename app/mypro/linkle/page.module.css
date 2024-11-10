@@ -1,3 +1,41 @@
+.container {
+  padding: 24px;
+  background-color: #3c3a39;
+}
+
 .title {
-  background-color: WHITE;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 24px;
+  color: white;
+}
+
+.grid {
+  display: flex;
+  gap: 16px; /* 컬럼 사이의 간격 */
+}
+
+.column {
+  flex: 1;
+}
+
+.section {
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.text {
+  color: white;
+  font-size: 1rem;
+  line-height: 1.5;
+
+  text-align: center;
 }

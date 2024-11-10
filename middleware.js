@@ -11,5 +11,5 @@ export function middleware(request) {
 }
 
 export const config = {
-  matcher: ["/mypro/todolist/:path*", "/mypro/something/:path*"], // 보호된 페이지 경로 설정
+  matcher: ["/mypro/todolist/:path*", "/mypro/linkle/:path*"], // 보호된 페이지 경로 설정
 };

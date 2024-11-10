@@ -51,7 +51,7 @@ export default function ProjectPage() {
       <ProjectBox
         title={"linkle"}
         desc1="기업과제 - 소셜링크 웹페이지 고도화(팀프로젝트)"
-        desc2="Vercel로 배포됨(https://linkle-nine.vercel.app/)"
+        desc2="Vercel로 배포됨 (https://linkle-nine.vercel.app/)"
         desc3="전체 api 구축 및 admin 페이지 UI/UX 담당"
       />
     </div>
