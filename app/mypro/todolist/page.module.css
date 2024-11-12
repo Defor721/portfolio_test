@@ -24,3 +24,11 @@
 .button:hover {
   background-color: #8c6cf7;
 }
+
+.emptyTodos {
+  color: white;
+  text-align: center;
+  margin-top: 100px;
+  font-weight: bold;
+  font-size: 32px;
+}

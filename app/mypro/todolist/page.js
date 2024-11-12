@@ -93,7 +93,7 @@ export default function TodoList() {
             />
           ))
         ) : (
-          <p>No todos available</p> // 기본 메시지로 디버깅 가능
+          <p className={classes.emptyTodos}>No todos available</p> // 기본 메시지로 디버깅 가능
         )}
       </div>
     </>
