@@ -3,7 +3,7 @@
 import classes from "./NewTodo.module.css";
 import { useState } from "react";
 
-export default function NewTodo({ modalHandler }) {
+export default function NewTodo({ modalHandler, todoGet }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -18,7 +18,9 @@ export default function NewTodo({ modalHandler }) {
       credentials: "include",
     });
     const result = await response.json();
+
     modalHandler();
+    todoGet();
   }
   return (
     <form className={classes.form} onSubmit={addTodo}>

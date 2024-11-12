@@ -18,7 +18,7 @@ export default function TodoList() {
   }, []);
   useEffect(() => {
     getTodos();
-  }, [todos]);
+  }, []);
   async function getTodos() {
     try {
       const response = await fetch("/api/getlist", {
@@ -34,9 +34,7 @@ export default function TodoList() {
         alert(result.message);
       } else {
         const result = await response.json();
-        if (result.list != 0) {
-          setTodo(result.list);
-        }
+        setTodo(result.list);
       }
     } catch (error) {
       console.error("Fetch error:", error);
@@ -66,8 +64,8 @@ export default function TodoList() {
   function modalHandler() {
     setModalVisible((prev) => !prev);
   }
-  function addTodoHandler(todos) {
-    setTodo((prev) => [todos, ...prev]);
+  function todoGet() {
+    getTodos();
   }
 
   return (
@@ -81,17 +79,22 @@ export default function TodoList() {
       <div>
         {modalVisible && (
           <Modal modalHandler={modalHandler}>
-            <NewTodo addTodo={addTodoHandler} modalHandler={modalHandler} />
+            <NewTodo modalHandler={modalHandler} todoGet={todoGet} />
           </Modal>
         )}
-        {todos.map((todo) => (
-          <Todo
-            title={todo.title}
-            description={todo.description}
-            key={todo.createAt}
-            createAt={todo.createAt}
-          />
-        ))}
+        {todos.length > 0 ? (
+          todos.map((todo) => (
+            <Todo
+              title={todo.title}
+              description={todo.description}
+              key={todo.createAt}
+              createAt={todo.createAt}
+              todoGet={todoGet}
+            />
+          ))
+        ) : (
+          <p>No todos available</p> // 기본 메시지로 디버깅 가능
+        )}
       </div>
     </>
   );
