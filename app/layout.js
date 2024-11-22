@@ -1,36 +1,23 @@
 import "./globals.css";
 import Mainheader from "../components/Main-header";
-import Head from "next/head";
+import ReactQueryProvider from "../app/providers/ReactQueryProvider";
 
 export const metadata = {
   title: "Defor's Portfolio",
   description: "next js portfolio",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
-        <title>{metadata.title}</title>
-        <meta name="description" content={metadata.description} />
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-61WS8XY0E7"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-61WS8XY0E7');
-            `,
-          }}
-        />
-      </Head>
       <body className="layout">
-        <Mainheader />
-        {children}
+        <ReactQueryProvider>
+          <Mainheader />
+          {children}
+        </ReactQueryProvider>
       </body>
     </html>
   );

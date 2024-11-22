@@ -8,8 +8,7 @@ import { RiNextjsLine } from "react-icons/ri";
 import { RiJavascriptFill } from "react-icons/ri";
 import { BiLogoTypescript } from "react-icons/bi";
 import { TbWorldWww } from "react-icons/tb";
-import Link from "next/link";
-import Head from "next/head";
+
 import "./globals.css";
 export default function Home() {
   return (
