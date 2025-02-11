@@ -4,6 +4,7 @@ import classes from "./page.module.css";
 import { FaArrowRight } from "react-icons/fa";
 import ProjectBox from "@/components/ProjectBox";
 import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 
 export default function ProjectPage() {
   const [isLogin, setIsLogin] = useState(true);
@@ -32,9 +33,6 @@ export default function ProjectPage() {
       setIsLogin(true);
     }
   }
-
-  
-
 
   return (
     <div className={classes.project}>
